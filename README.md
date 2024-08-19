@@ -206,7 +206,7 @@
 Refer to: [UTM to MGRS Conversion Guide](https://autowarefoundation.github.io/autoware-documentation/main/how-to-guides/integrating-autoware/creating-maps/converting-utm-to-mgrs-map/)
 
 ![OpenCV with CUDA Configuration](images/image-16.png)
-```
+
 
 
 ———————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -420,4 +420,3 @@ Refer to: [UTM to MGRS Conversion Guide](https://autowarefoundation.github.io/au
 参考：[UTM 到 MGRS 转换指南](https://autowarefoundation.github.io/autoware-documentation/main/how-to-guides/integrating-autoware/creating-maps/converting-utm-to-mgrs-map/)
 
 ![OpenCV 与 CUDA 配置](images/image-16.png)
-```
