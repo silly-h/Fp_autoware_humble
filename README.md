@@ -33,8 +33,10 @@
        
        Solution: Install missing dependencies
    - Check CUDA components with jtop:
+     
      ![JTOP Info](images/image-5.png)
    - Configure cuDNN according to version:
+     
      ![cuDNN Configuration](images/image-6.png)
    
    ```bash
@@ -54,14 +56,15 @@
 
 ## II. Installing Autoware.universe on Ubuntu 22.04 with ROS Humble
 
-0. Set up VPN for git:
+1. Set up VPN for git:
+
    ![VPN Setup](images/image-8.png)
    ```bash
    git config --global http.proxy 127.0.0.1:7890
    git config --global https.proxy 127.0.0.1:7890
    ```
 
-1. Install dependencies:
+2. Install dependencies:
    ```bash
    sudo apt-get -y update
    sudo apt-get -y install git
@@ -118,38 +121,46 @@
    sudo apt install golang
    ```
 
-2. Autoware source installation:
+3. Autoware source installation:
    ```bash
    cd autoware
    mkdir src
    vcs import src < autoware.repos
    ```
    - If vcs import fails, add proxy to URLs in autoware.repos:
+
      ![Proxy Addition](images/image-7.png)
 
-3. Build Autoware:
+4. Build Autoware:
    ```bash
    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
    ```
    - Troubleshoot OpenCV issues if encountered:
      - OpenCV Issue 1:
-       ![OpenCV Issue 1](images/image-9.png)
+
+        ![OpenCV Issue 1](images/image-9.png)
        Solution: Resolve GPG key error
      - OpenCV Issue 2: 
+
        ![OpenCV Issue 2](images/image-10.png)
        Solution: Install missing Python packages
      - OpenCV Issue 3:
+
        ![OpenCV Issue 3](images/image-11.png)
      - OpenCV Issue 4:
+
        ![OpenCV Issue 4](images/image-12.png)
        Solution: Manually install missing OpenCV and OpenCV_contrib packages
-      ![OpenCV with CUDA Configuration](images/image-16.png)
+
+         ![OpenCV with CUDA Configuration](images/image-16.png)
    - Manual map download may be required:
+
      ![Map Download Issue](images/image-13.png)
    - Successful build:
+
      ![Build Complete](images/image-15.png)
 
-4. Run official example:
+5. Run official example:
    ```bash
    cd autoware
    source install/setup.bash
@@ -260,11 +271,14 @@ Refer to: [UTM to MGRS Conversion Guide](https://autowarefoundation.github.io/au
    - 若无法一键安装JetPack，请参考：[JetPack安装指南](https://blog.csdn.net/weixin_43702653/article/details/129249585)
    - 安装问题解决参考：[问题排查指南](https://blog.csdn.net/Black__Jacket/article/details/127736938)
      - 问题：依赖关系问题
+
        ![依赖问题](images/image-4.png)
        解决方法：安装缺失的依赖
    - 使用jtop检查CUDA组件：
-     ![JTOP信息](images/image-5.png)
+
+      ![JTOP信息](images/image-5.png)
    - 根据版本配置cuDNN：
+
      ![cuDNN配置](images/image-6.png)
    
    ```bash
@@ -285,13 +299,14 @@ Refer to: [UTM to MGRS Conversion Guide](https://autowarefoundation.github.io/au
 ## 二、在Ubuntu 22.04上使用ROS Humble安装Autoware.universe
 
 0. 为git设置VPN：
+
    ![VPN设置](images/image-8.png)
    ```bash
    git config --global http.proxy 127.0.0.1:7890
    git config --global https.proxy 127.0.0.1:7890
    ```
 
-1. 安装依赖项：
+2. 安装依赖项：
    ```bash
    sudo apt-get -y update
    sudo apt-get -y install git
@@ -348,38 +363,46 @@ Refer to: [UTM to MGRS Conversion Guide](https://autowarefoundation.github.io/au
    sudo apt install golang
    ```
 
-2. Autoware源码安装：
+3. Autoware源码安装：
    ```bash
    cd autoware
    mkdir src
    vcs import src < autoware.repos
    ```
    - 如果vcs导入失败，在autoware.repos中的URL添加代理：
-     ![代理添加](images/image-7.png)
 
-3. 编译Autoware：
+      ![代理添加](images/image-7.png)
+
+4. 编译Autoware：
    ```bash
    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
    ```
    - 如遇到OpenCV问题，可按以下步骤排查：
      - OpenCV问题1：
-       ![OpenCV问题1](images/image-9.png)
+
+        ![OpenCV问题1](images/image-9.png)
        解决方法：解决GPG密钥错误
      - OpenCV问题2：
-       ![OpenCV问题2](images/image-10.png)
+
+        ![OpenCV问题2](images/image-10.png)
        解决方法：安装缺失的Python包
      - OpenCV问题3：
+
        ![OpenCV问题3](images/image-11.png)
      - OpenCV问题4：
-       ![OpenCV问题4](images/image-12.png)
+
+        ![OpenCV问题4](images/image-12.png)
        解决方法：手动安装缺失的OpenCV和OpenCV_contrib包
-       ![CUDA配置的OpenCV](images/image-16.png)
+
+        ![CUDA配置的OpenCV](images/image-16.png)
    - 手动下载地图可能是必需的：
-     ![地图下载问题](images/image-13.png)
+
+      ![地图下载问题](images/image-13.png)
    - 编译成功：
+
      ![编译完成](images/image-15.png)
 
-4. 运行官方示例：
+5. 运行官方示例：
    ```bash
    cd autoware
    source install/setup.bash
