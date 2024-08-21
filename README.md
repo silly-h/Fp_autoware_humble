@@ -28,7 +28,9 @@
    - If JetPack cannot be installed in one click, refer to: [JetPack Installation Guide](https://blog.csdn.net/weixin_43702653/article/details/129249585)
    - For installation issues, see: [Troubleshooting Guide](https://blog.csdn.net/Black__Jacket/article/details/127736938)
      - Issue: Dependency problems
+     
        ![Dependency Issue](images/image-4.png)
+       
        Solution: Install missing dependencies
    - Check CUDA components with jtop:
      ![JTOP Info](images/image-5.png)
