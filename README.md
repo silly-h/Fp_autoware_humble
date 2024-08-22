@@ -390,7 +390,6 @@ ros2 launch autoware_launch autoware.launch.xml map_path:=$HOME/autoware_map/fix
 ```
 
 fixposition-map-planning file: [Download Link](https://drive.google.com/file/d/1KmjwAPUVkXb3ak232g8UvsaJic1mf84h/view?usp=drive_link)
-```
 
 
 
