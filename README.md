@@ -344,7 +344,7 @@ Autoware.Universe overall pipeline: [Node Diagram](https://app.diagrams.net/?lig
    ```
 
 2. Modify input point cloud parameters:
-   ![Point Cloud Parameters](image-17.png)
+   ![Point Cloud Parameters](images/image-17.png)
    Location: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor`
    Changes:
    - `voxel_grid_filter.param.yaml`: Set all to 0.1
@@ -749,7 +749,7 @@ Autoware.Universe总体流程图: [节点图](https://app.diagrams.net/?lightbox
    ```
 
 2. 修改输入点云参数:
-   ![Point Cloud Parameters](image-17.png)
+   ![Point Cloud Parameters](images/image-17.png)
    位置: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor`
    修改:
    - `voxel_grid_filter.param.yaml`: 全部设置为0.1
