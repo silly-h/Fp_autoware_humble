@@ -344,14 +344,16 @@ Autoware.Universe overall pipeline: [Node Diagram](https://app.diagrams.net/?lig
    ```
 
 2. Modify input point cloud parameters:
+
    ![Point Cloud Parameters](images/image-17.png)
+
    Location: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor`
    Changes:
    - `voxel_grid_filter.param.yaml`: Set all to 0.1
    - `random_downsample_filter.param.yaml`: Set to 3000
    - `crop_box_filter_measurement_range.param.yaml`: Keep unchanged
 
-3. Modify ndt_scan_matcher parameters:
+4. Modify ndt_scan_matcher parameters:
    Location: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher`
    Changes:
    - required_distance: 5.0 (was 10.0)
@@ -359,7 +361,7 @@ Autoware.Universe overall pipeline: [Node Diagram](https://app.diagrams.net/?lig
    - initial_to_result_distance_tolerance_m: 2.0 (was 3.0)
    - critical_upper_bound_exe_time_ms: 80.0 (was 100.0)
 
-4. Modify sensor messages to ROS local time:
+5. Modify sensor messages to ROS local time:
    4.1. File: `/autoware_universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp`
         Change line 312:
         ```cpp
@@ -415,19 +417,22 @@ fixposition-map-planning file: [Download Link](https://drive.google.com/file/d/1
 
 2. 挂载SSD到home目录。参考：[SSD挂载指南](https://blog.csdn.net/qq_33232152/article/details/140341819)
    - 若在执行`sudo fdisk /dev/nvme0n1`后出现差异：
-     ![分区差异](images/image-2.png)
+
+      ![分区差异](images/image-2.png)
+
    - 按“d”删除分区并继续：
+
      ![删除分区](images/image-3.png)
 
-3. 使用FishROS更改系统源：
+4. 使用FishROS更改系统源：
    ```bash
    wget http://fishros.com/install -O fishros && . fishros
    ```
    选择更改源命令，但不要清除第三方源。
 
-4. 安装Firefox浏览器和Todesk远程软件。
+5. 安装Firefox浏览器和Todesk远程软件。
 
-5. 安装JetPack：
+6. 安装JetPack：
    - 使用刷机过程中附带的CUDA、cuDNN和TensorRT。
    - 若无法一键安装JetPack，请参考：[JetPack安装指南](https://blog.csdn.net/weixin_43702653/article/details/129249585)
    - 安装问题解决参考：[问题排查指南](https://blog.csdn.net/Black__Jacket/article/details/127736938)
@@ -452,7 +457,7 @@ fixposition-map-planning file: [Download Link](https://drive.google.com/file/d/1
    sudo ln -sf libcudnn_cnn_infer.so.8.9.4 libcudnn_cnn_infer.so.8
    ```
 
-6. 使用FishROS安装ROS2 Humble和VSCode：
+7. 使用FishROS安装ROS2 Humble和VSCode：
    ```bash
    wget http://fishros.com/install -O fishros && . fishros
    ```
@@ -749,14 +754,16 @@ Autoware.Universe总体流程图: [节点图](https://app.diagrams.net/?lightbox
    ```
 
 2. 修改输入点云参数:
+
    ![Point Cloud Parameters](images/image-17.png)
+
    位置: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher/pointcloud_preprocessor`
    修改:
    - `voxel_grid_filter.param.yaml`: 全部设置为0.1
    - `random_downsample_filter.param.yaml`: 设置为3000
    - `crop_box_filter_measurement_range.param.yaml`: 保持不变
 
-3. 修改ndt_scan_matcher参数:
+4. 修改ndt_scan_matcher参数:
    位置: `/autoware_universe/autoware/src/launcher/autoware_launch/autoware_launch/config/localization/ndt_scan_matcher`
    修改:
    - required_distance: 5.0 (原为10.0)
@@ -764,7 +771,7 @@ Autoware.Universe总体流程图: [节点图](https://app.diagrams.net/?lightbox
    - initial_to_result_distance_tolerance_m: 2.0 (原为3.0)
    - critical_upper_bound_exe_time_ms: 80.0 (原为100.0)
 
-4. 将传感器消息修改为ROS本地时间:
+5. 将传感器消息修改为ROS本地时间:
    4.1. 文件: `/autoware_universe/autoware/src/universe/autoware.universe/localization/ndt_scan_matcher/src/ndt_scan_matcher_core.cpp`
         修改第312行:
         ```cpp
