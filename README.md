@@ -1,5 +1,25 @@
 # Autoware Installation and Configuration Guide
 
+
+### **Hardware Devices**
+
+- **Industrial Computer**: Expansion board for NVIDIA Jetson series products developed by Plink  
+- **Camera**: OAK-D-Lite  
+- **LiDAR**: RS-LIDAR-16  
+- **GNSS/IMU**: Fixposition VRTK2  
+
+### ⚠️ **Attention!!!**
+
+When using the BSP configuration file for the Plink-Jetson series expansion board or complete system to flash to JetPack 6.0, the following issues may occur:
+
+1. **After flashing version 36.3, the system repeatedly reboots and cannot start normally. Version 36.2 is the successful flashing version.**
+2. **After flashing, Ubuntu 22.04 does not come with the Firefox browser by default. In domestic development environments, downloading Firefox via snap is time-consuming.**
+3. **After flashing, Ubuntu 22.04 lacks the corresponding USB driver (ttyUSB0), making it impossible to access external large-capacity storage devices (USB drives/SSDs). Installing the corresponding extension package does not resolve this issue.**
+4. **After flashing, the ROS 2 Humble version installed on Ubuntu 22.04 has incomplete functionality, including the absence of the `ros2 run` command and issues with shutting down ROS nodes properly.**  
+   **Note!!!: This issue might also be caused by using the `sudo aptitude install` command, which may remove a large number of ROS components. It is recommended not to use this command.**
+
+
+
 ## I. Flashing the System
 
 1. Prepare a virtual machine with Ubuntu 20.04. Reference: [Flashing Guide](https://gitee.com/plink718/plink-jetpack/tree/master/flashPatch/36.3/AGX-Orin/Y-C8)
@@ -401,10 +421,28 @@ fixposition-map-planning file: [Download Link](https://drive.google.com/file/d/1
 
 ————————————————————————————————————————————————————————————————————————————————————
 
-
 以下是Autoware安装和配置指南的中文版本：
 
 # Autoware 安装和配置指南
+
+
+### **硬件设备**
+
+- **工控机**: Plink 研发的 NVIDIA Jetson 系列产品的扩展载板  
+- **相机**: OAK-D-Lite  
+- **激光雷达**: RS-LIDAR-16  
+- **GNSS/IMU**: Fixposition VRTK2  
+
+### ⚠️ **注意！！！**
+
+**在使用工控机为 Plink-Jetson 系列产品的扩展载板、整机的 BSP 配置文件刷机到 JetPack 6.0 会出现以下情况：**
+
+1. **36.3 版本刷机完成后会反复重启，无法正常启动。成功刷机的版本为 36.2。**
+2. **刷机完成后，Ubuntu 22.04 系统不自带 Firefox 浏览器。在国内开发环境下，使用 snap 下载 Firefox 十分耗时。**
+3. **刷机完成后，Ubuntu 22.04 系统无 USB 对应驱动 (ttyUSB0)，无法访问外接大容量存储设备（U 盘/SSD）。安装相应扩展包也无法解决此问题。**
+4. **刷机完成后，Ubuntu 22.04 系统中安装的 ROS 2 Humble 版本功能不完善，包括 `ros2 run` 命令不存在、ROS 节点无法正常关闭等现象。**  
+   **注！！！：该问题也可能由于使用 `sudo aptitude install` 命令删除了大量 ROS 组件造成，推荐不要使用该命令。**
+
 
 ## 一、系统刷写
 
